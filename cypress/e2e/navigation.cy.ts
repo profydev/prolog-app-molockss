@@ -14,9 +14,9 @@ describe("Sidebar Navigation", () => {
         .contains("Projects")
         .should("have.attr", "href", "/dashboard");
 
-      cy.get("nav")
-        .contains("Issues")
-        .should("have.attr", "href", "/dashboard/issues");
+      cy.get("nav").contains("Issues").click();
+      cy.url().should("eq", "http://localhost:3000/dashboard/issues");
+      cy.get("h1").contains("Issues");
 
       cy.get("nav")
         .contains("Alerts")
@@ -29,6 +29,14 @@ describe("Sidebar Navigation", () => {
       cy.get("nav")
         .contains("Settings")
         .should("have.attr", "href", "/dashboard/settings");
+
+      cy.get("nav")
+        .contains("Support")
+        .should(
+          "have.attr",
+          "href",
+          "mailto:support@prolog-app.com?subject=Support Request: ",
+        );
     });
 
     it("is collapsible", () => {
