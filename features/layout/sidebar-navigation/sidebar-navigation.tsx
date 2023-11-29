@@ -38,7 +38,7 @@ export function SidebarNavigation() {
           <img
             src={
               isSidebarCollapsed
-                ? "/icons/logo-small.svg"
+                ? "/icons/logo-large.svg"
                 : "/icons/logo-large.svg"
             }
             alt="logo"
