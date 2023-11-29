@@ -81,7 +81,7 @@ describe("Issue List", () => {
       cy.reload();
       cy.wait(["@getProjects", "@getIssuesPage2"]);
       cy.wait(1500);
-      cy.contains("Page 1 of 3");
+      cy.contains("Page 2 of 3");
     });
   });
 });
