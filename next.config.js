@@ -7,8 +7,6 @@ const nextConfig = {
   publicRuntimeConfig: {
     version: process.env.npm_package_version,
   },
-
-
 };
 
 module.exports = nextConfig;
