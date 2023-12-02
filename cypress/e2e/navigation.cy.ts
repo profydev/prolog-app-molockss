@@ -44,7 +44,7 @@ describe("Sidebar Navigation", () => {
       cy.get("nav").contains("Collapse").click();
 
       // check that links still exist and are functionable
-      cy.get("nav").find("a").should("have.length", 6).eq(1).click();
+      cy.get("nav").find("a").should("have.length", 10).eq(1).click();
       cy.url().should("eq", "http://localhost:3000/dashboard/issues");
       cy.url().should("eq", "http://localhost:3000/dashboard/issues");
 
@@ -89,7 +89,7 @@ describe("Sidebar Navigation", () => {
       isInViewport("nav");
 
       // check that all links are rendered
-      cy.get("nav").find("a").should("have.length", 6);
+      cy.get("nav").find("a").should("have.length", 10);
 
       // Support button should be rendered but Collapse button not
       cy.get("nav").contains("Support").should("exist");
@@ -100,5 +100,38 @@ describe("Sidebar Navigation", () => {
       cy.wait(500);
       isNotInViewport("nav");
     });
+  });
+});
+
+describe("footer navigation", () => {
+  beforeEach(() => {
+    cy.visit("http://localhost:3000/dashboard");
+    cy.viewport(1025, 900);
+    cy.get("footer").as("Footer");
+  });
+
+  it("renders the current version of the application", () => {
+    const version = Cypress.env("version");
+    cy.get("@Footer").contains(`Version: ${version}`);
+  });
+
+  it("renders the correct links", () => {
+    cy.get("@Footer").find("ul").as("footerNav");
+
+    cy.get("@footerNav").find("li").should("have.length", 4);
+
+    cy.get("@footerNav").contains("Docs").should("have.attr", "href", "#");
+
+    cy.get("@footerNav").contains("API").should("have.attr", "href", "#");
+
+    cy.get("@footerNav").contains("Help").should("have.attr", "href", "#");
+
+    cy.get("@footerNav").contains("Community").should("have.attr", "href", "#");
+  });
+
+  it("prolog logo renders", () => {
+    cy.get("@Footer")
+      .find("img")
+      .should("have.attr", "src", "/icons/logo-small.svg");
   });
 });

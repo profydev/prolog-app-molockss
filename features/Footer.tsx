@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./footer.module.scss";
+import style from "../features/footer.module.scss";
 import getConfig from "next/config";
 
 const { publicRuntimeConfig } = getConfig();
@@ -19,7 +19,7 @@ const Footer = () => {
           {navItems.map((item) => {
             return (
               <li key={item.title}>
-                <a className="title-list" href="{item.url}">
+                <a className="title-list" href="#">
                   {" "}
                   {item.title}{" "}
                 </a>
