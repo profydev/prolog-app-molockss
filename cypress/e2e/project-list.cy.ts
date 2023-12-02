@@ -34,10 +34,27 @@ describe("Project List", () => {
           cy.wrap($el).contains(languageNames[index]);
           cy.wrap($el).contains(mockProjects[index].numIssues);
           cy.wrap($el).contains(mockProjects[index].numEvents24h);
-          // cy.wrap($el).contains(capitalize(mockProjects[index].status));
+
+          // Debugging: Log the actual text content of the element
+          cy.wrap($el).then(($el) => {
+            const statusText = $el.text();
+            cy.log(`Actual status text: ${statusText}`);
+          });
+
+          // check the status text
+          // const expectedStatus = capitalize(mockProjects[index].status);
+          // cy.wrap($el).contains(expectedStatus);
+
+          // check the href attribute for the anchor element
           cy.wrap($el)
             .find("a")
-            .should("have.attr", "href", "/dashboard/issues");
+            .should(($a) => {
+              const hrefValue = $a.attr("href");
+              expect(hrefValue).to.equal(
+                "/dashboard/issues",
+                `Actual href: ${hrefValue}`,
+              );
+            });
         });
     });
   });
