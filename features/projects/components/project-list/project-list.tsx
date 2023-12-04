@@ -21,7 +21,12 @@ export function ProjectList() {
   }, []); // Empty dependency array means this effect runs once on mount
 
   if (showLoading) {
-    return <LoadingIndicator />;
+    return (
+      <div data-testid="loading-screen">
+        {" "}
+        <LoadingIndicator />
+      </div>
+    );
   }
 
   // Actual loaded element or condition
