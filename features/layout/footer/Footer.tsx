@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../features/footer.module.scss";
+import styles from "./footer.module.scss";
 import getConfig from "next/config";
 
 const { publicRuntimeConfig } = getConfig();
@@ -13,8 +13,8 @@ const navItems = [
 
 const Footer = () => {
   return (
-    <footer className={style.footer}>
-      <nav aria-label="Footer navigation" className={style.nav}>
+    <footer className={styles.footer}>
+      <nav aria-label="Footer navigation" className={styles.nav}>
         <ul role="list">
           {navItems.map((item) => {
             return (
@@ -30,9 +30,9 @@ const Footer = () => {
       </nav>
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/icons/logo-small.svg" alt="" className={style.logo} />
+      <img src="/icons/logo-small.svg" alt="" className={styles.logo} />
 
-      <p className={style.version}>Version: {publicRuntimeConfig?.version}</p>
+      <p className={styles.version}>Version: {publicRuntimeConfig?.version}</p>
     </footer>
   );
 };

@@ -1,2 +1,2 @@
 export * from "./components/issue-list";
-export * from "../Footer";
+export * from "../layout/footer/Footer";
