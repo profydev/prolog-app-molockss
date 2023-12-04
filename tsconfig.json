@@ -24,6 +24,11 @@
     },
     "noEmit": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "features/ui/loading-indicator/loading-indicator.stories.mdx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "features/ui/loading-indicator/loading-indicator.stories.tsx"
+  ],
   "exclude": ["node_modules", "cypress", "cypress.config.ts"]
 }
