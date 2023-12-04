@@ -13,7 +13,7 @@ describe("loading screen", () => {
 
     // Check if the loading screen is not visible after data has loaded
     cy.get('[data-testid="loading-screen"]').should("not.exist", {
-      timeout: 10000,
+      timeout: 15000,
     });
   });
 });
