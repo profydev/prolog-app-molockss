@@ -1,3 +1,7 @@
+@use "@styles/color";
+@use "@styles/font";
+@use "@styles/space";
+
 .button {
   cursor: pointer;
 
@@ -14,5 +18,71 @@
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
+  }
+}
+
+.container {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  border-radius: space.$s4;
+
+  &.sm {
+    padding: space.$s0 space.$s2;
+    height: 1.375rem;
+    font: font.$text-xs-medium;
+  }
+
+  &.md {
+    padding: 0 0.625rem;
+    height: 1.5rem;
+    font: font.$text-sm-medium;
+  }
+
+  &.lg {
+    padding: space.$s0 space.$s3;
+    height: 1.75rem;
+    font: font.$text-md-large;
+  }
+
+  &.xlg {
+    padding: space.$s0 space.$s4;
+    height: 1.95rem;
+    font: font.$text-md-xlarge;
+  }
+
+  &.primary {
+    background: color.$primary-600;
+    color: color.$gray-0;
+  }
+
+  &.secondary {
+    background: color.$primary-50;
+    color: color.$primary-700;
+  }
+
+  &.gray {
+    background: color.$gray-50;
+    color: color.$gray-700;
+  }
+
+  &.empty {
+    background: color.$gray-0;
+    color: color.$primary-700;
+  }
+
+  &.emptygray {
+    background: color.$gray-0;
+    color: color.$gray-500;
+  }
+
+  &.error {
+    background: color.$error-700;
+    color: color.$gray-0;
+  }
+
+  &.emptyerror {
+    background: color.$gray-0;
+    color: color.$error-700;
   }
 }
