@@ -35,7 +35,11 @@ export function ProjectList() {
 
   if (isError) {
     console.error(error);
-    return <LoadingError />;
+    return (
+      <div data-testid="loading-error">
+        <LoadingError />
+      </div>
+    );
   }
 
   return (
