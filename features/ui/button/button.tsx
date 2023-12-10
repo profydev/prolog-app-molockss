@@ -40,9 +40,11 @@ export function Button({
   size = ButtonSize.md,
   color = ButtonColor.primary,
   icon = ButtonIcon.none,
+  ...props
 }: ButtonProps) {
   return (
-    <div
+    <button
+      {...props}
       className={classNames(
         styles.container,
         styles[size],
@@ -54,6 +56,6 @@ export function Button({
       )}
     >
       {children}
-    </div>
+    </button>
   );
 }

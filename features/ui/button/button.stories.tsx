@@ -43,7 +43,7 @@ Default.args = {
   size: ButtonSize.sm,
   color: ButtonColor.primary,
   icon: ButtonIcon.none,
-  children: "Label",
+  children: "Button CTA",
 };
 Default.parameters = {
   viewMode: "docs",
