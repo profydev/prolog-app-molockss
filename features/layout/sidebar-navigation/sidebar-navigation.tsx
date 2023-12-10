@@ -97,7 +97,10 @@ export function SidebarNavigation() {
               text="Collapse"
               iconSrc="/icons/arrow-left.svg"
               isCollapsed={isSidebarCollapsed}
-              onClick={() => toggleSidebar()}
+              onClick={() => {
+                console.log("Collapse button clicked");
+                toggleSidebar();
+              }}
               className={styles.collapseMenuItem}
             />
           </ul>
