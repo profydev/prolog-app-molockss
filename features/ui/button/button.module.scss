@@ -164,9 +164,8 @@
     }
   }
 
-  // default button style
   &.nocolor {
-    color: white; // Inherits the color from the parent
+    color: white;
     background-color: transparent;
     border: none;
   }
