@@ -164,6 +164,12 @@
     }
   }
 
+  &.nocolor {
+    color: white;
+    background-color: transparent;
+    border: none;
+  }
+
   &.error {
     color: #fff;
     background-color: color.$error-600;

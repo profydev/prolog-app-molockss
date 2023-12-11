@@ -19,6 +19,7 @@ export enum ButtonColor {
   emptygray = "emptygray",
   error = "error",
   emptyerror = "emptyerror",
+  nocolor = "nocolor",
 }
 
 export enum ButtonIcon {
@@ -38,7 +39,7 @@ type ButtonProps = {
 export function Button({
   children,
   size = ButtonSize.md,
-  color = ButtonColor.primary,
+  color = ButtonColor.nocolor,
   icon = ButtonIcon.none,
   ...props
 }: ButtonProps) {
