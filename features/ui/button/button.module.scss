@@ -167,7 +167,6 @@
   &.nocolor {
     color: white; // Inherits the color from the parent
     background-color: transparent;
-    border: 1px solid color.$error-600;
     border: none;
   }
 
