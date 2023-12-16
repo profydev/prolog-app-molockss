@@ -19,6 +19,7 @@ interface CheckboxProps {
   checkboxType?: CheckboxType;
 }
 
+// Additional HTML attributes for the checkbox input
 interface CheckBoxAttributes extends HTMLAttributes<HTMLInputElement> {
   disabled?: boolean;
   checked?: boolean;
@@ -46,3 +47,5 @@ export function Checkbox({
     </label>
   );
 }
+/* Empty span element; creating a custom-styled checkbox.
+The span doesn't contain any actual content but is used purely for its visual styling properties to represent the appearance of a checkbox in different states and sizes */
